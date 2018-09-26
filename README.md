@@ -1,1 +1,1 @@
-# PCTR REPO
+# PCTR [![Build Status](https://dev.azure.com/rodrigosanabria22/krosf/_apis/build/status/KROSF.PCTR)](https://dev.azure.com/rodrigosanabria22/krosf/_build/latest?definitionId=5)
