@@ -34,7 +34,7 @@ jobs:
       testResultsFiles: '**/TEST-*.xml'
       goals: 'package'
 
-- job: macOS10.13
+- job: macOS1013
   pool:
     vmImage: 'xcode9-macos10.13'
   steps:
