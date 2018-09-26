@@ -7,7 +7,7 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- task: Maven@3.5
+- task: Maven@3
   inputs:
     mavenPomFile: '$(system.defaultWorkingDirectory)/tema_2/pom.xml'
     mavenOptions: '-Xmx3072m'
