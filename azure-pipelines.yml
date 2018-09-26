@@ -19,7 +19,7 @@
 #     goals: 'package'
 
 jobs:
-- job: Ubuntu 16.04
+- job: Ubuntu1604
   pool:
     vmImage: 'Ubuntu 16.04'
   steps:
@@ -34,7 +34,7 @@ jobs:
       testResultsFiles: '**/TEST-*.xml'
       goals: 'package'
 
-- job: macOS 10.13
+- job: macOS10.13
   pool:
     vmImage: 'xcode9-macos10.13'
   steps:
@@ -49,7 +49,7 @@ jobs:
       testResultsFiles: '**/TEST-*.xml'
       goals: 'package'
 
-- job: vs2017 win2016
+- job: vs2017win2016
   pool:
     vmImage: 'vs2017-win2016'
   steps:
