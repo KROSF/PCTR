@@ -2,6 +2,50 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ResponsiveGUI",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "responsive.ResponsiveGUI",
+            "args": "",
+            "projectName": "tema_2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestThread",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "hilos.TestThread",
+            "args": "",
+            "projectName": "tema_2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "graficos.App",
+            "args": "",
+            "projectName": "tema_2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ventana",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "graficos.Ventana",
+            "args": "",
+            "projectName": "tema_2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Polinomio",
             "request": "launch",
             "cwd": "${workspaceFolder}",

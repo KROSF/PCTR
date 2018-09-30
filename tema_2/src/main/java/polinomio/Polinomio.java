@@ -42,7 +42,7 @@ public class Polinomio {
     }
 
     public double coeficiente(int grado) {
-        return (grado > this.grado) ? 0.0 : this.data[grado];
+        return (grado > this.grado || grado < 0) ? 0.0 : this.data[grado];
     }
 
     public void coeficiente(int grado, double coeficiente) {
