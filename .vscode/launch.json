@@ -2,6 +2,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "relacion.App",
+            "args": "",
+            "projectName": "relacion"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "pr1.App",
+            "args": "",
+            "projectName": "practica1"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ResponsiveGUI",
             "request": "launch",
             "cwd": "${workspaceFolder}",
