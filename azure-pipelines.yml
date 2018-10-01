@@ -13,7 +13,16 @@ jobs:
       publishJUnitResults: true
       testResultsFiles: '**/TEST-*.xml'
       goals: 'package'
-
+  - task: Maven@3
+    inputs:
+      mavenPomFile: '$(system.defaultWorkingDirectory)/relacion/pom.xml'
+      mavenOptions: '-Xmx3072m'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.8'
+      jdkArchitectureOption: 'x64'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      goals: 'package'
 - job: macOS1013
   pool:
     vmImage: 'xcode9-macos10.13'
@@ -21,6 +30,16 @@ jobs:
   - task: Maven@3
     inputs:
       mavenPomFile: '$(system.defaultWorkingDirectory)/tema_2/pom.xml'
+      mavenOptions: '-Xmx3072m'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.8'
+      jdkArchitectureOption: 'x64'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      goals: 'package'
+  - task: Maven@3
+    inputs:
+      mavenPomFile: '$(system.defaultWorkingDirectory)/relacion/pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
@@ -36,6 +55,16 @@ jobs:
   - task: Maven@3
     inputs:
       mavenPomFile: '$(system.defaultWorkingDirectory)/tema_2/pom.xml'
+      mavenOptions: '-Xmx3072m'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.8'
+      jdkArchitectureOption: 'x64'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      goals: 'package'
+  - task: Maven@3
+    inputs:
+      mavenPomFile: '$(system.defaultWorkingDirectory)/relacion/pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
