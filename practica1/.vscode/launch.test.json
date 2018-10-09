@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "practica1",
+                "projectName": "practica1",
+                "workingDirectory": "/Users/krosf/vscode/PCTR/practica1",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "practica1",
+                "projectName": "practica1",
+                "workingDirectory": "/Users/krosf/vscode/PCTR/practica1",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

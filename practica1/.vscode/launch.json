@@ -1,0 +1,70 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ack",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "pr1.Ack",
+            "args": "",
+            "projectName": "practica1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - aleatorios",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "pr1.aleatorios",
+            "args": "",
+            "projectName": "practica1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Cesar",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "pr1.Cesar",
+            "args": "",
+            "projectName": "practica1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - intDefinidaMonteCarlo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "pr1.intDefinidaMonteCarlo",
+            "args": "",
+            "projectName": "practica1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NewtonRaphson",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "pr1.NewtonRaphson",
+            "args": "",
+            "projectName": "practica1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Circulo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "pr1.Circulo",
+            "args": "",
+            "projectName": "practica1"
+        }
+    ]
+}

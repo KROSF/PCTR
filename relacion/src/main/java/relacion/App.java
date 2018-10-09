@@ -1,5 +1,7 @@
 package relacion;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -67,15 +69,27 @@ public class App {
         }
     }
 
-    public static int maxTres(int a, int b, int c){
+    public static int maxTres(int a, int b, int c) {
         return Math.max(a, Math.max(b, c));
     }
 
-    public static void main(String[] args) {
-        double[] eq = ecuacucionSegundoGrado(-1, 7, -10);
-        if (eq != null) {
-            System.out.println(eq[0]);
-            System.out.println(eq[1]);
+    public static double farenheitCelsius(double f) {
+        return (5 * (f - 32)) / 9;
+    }
+
+    public static void mainFC() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("°F: ");
+        double a = scan.nextDouble();
+        while (a != 999) {
+            System.out.format("%.2f °F = %.2f °C\n", a, farenheitCelsius(a));
+            System.out.print("°F: ");
+            a = scan.nextDouble();
         }
+        scan.close();
+    }
+
+    public static void main(String[] args) {
+        mainFC();
     }
 }

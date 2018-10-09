@@ -1,0 +1,74 @@
+[
+  {
+    "densidad": 1.408,
+    "diametro": 1391016.0,
+    "distancia": 0.0,
+    "masa": 1.9890000000000002e30,
+    "id": 0,
+    "nombre": "Sol"
+  },
+  {
+    "densidad": 5.44,
+    "diametro": 4879.4,
+    "distancia": 5.791e7,
+    "masa": 3.3020000000000006e23,
+    "id": 1,
+    "nombre": "Mercurio"
+  },
+  {
+    "densidad": 5.24,
+    "diametro": 12104.0,
+    "distancia": 1.082e8,
+    "masa": 4.867e24,
+    "id": 2,
+    "nombre": "Venus"
+  },
+  {
+    "densidad": 5.51,
+    "diametro": 12742.0,
+    "distancia": 1.496e8,
+    "masa": 5.972e24,
+    "id": 3,
+    "nombre": "Tierra"
+  },
+  {
+    "densidad": 3.93,
+    "diametro": 6779.0,
+    "distancia": 2.279e8,
+    "masa": 6.39e23,
+    "id": 4,
+    "nombre": "Marte"
+  },
+  {
+    "densidad": 1.33,
+    "diametro": 139822.0,
+    "distancia": 7.785e8,
+    "masa": 1.898e27,
+    "id": 5,
+    "nombre": "Jupiter"
+  },
+  {
+    "densidad": 687.0,
+    "diametro": 116464.0,
+    "distancia": 1.433e9,
+    "masa": 5.683e26,
+    "id": 6,
+    "nombre": "Saturno"
+  },
+  {
+    "densidad": 1.27,
+    "diametro": 50724.0,
+    "distancia": 2.871e9,
+    "masa": 8.681e25,
+    "id": 7,
+    "nombre": "Urano"
+  },
+  {
+    "densidad": 1.64,
+    "diametro": 49244.0,
+    "distancia": 4.495e9,
+    "masa": 1.0240000000000001e26,
+    "id": 8,
+    "nombre": "Neptuno"
+  }
+]
