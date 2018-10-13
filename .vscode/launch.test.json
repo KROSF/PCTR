@@ -1,10 +1,48 @@
 {
     "run": {
         "default": "",
-        "items": []
+        "items": [
+            {
+                "name": "seminarios",
+                "projectName": "seminarios",
+                "workingDirectory": "/Users/krosf/vscode/PCTR/seminarios",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "practicas",
+                "projectName": "practicas",
+                "workingDirectory": "/Users/krosf/vscode/PCTR/practicas",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
     },
     "debug": {
         "default": "",
-        "items": []
+        "items": [
+            {
+                "name": "seminarios",
+                "projectName": "seminarios",
+                "workingDirectory": "/Users/krosf/vscode/PCTR/seminarios",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "practicas",
+                "projectName": "practicas",
+                "workingDirectory": "/Users/krosf/vscode/PCTR/practicas",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
     }
 }
