@@ -14,7 +14,7 @@ public class Paciente {
    * @param dni con letra.
    * @param direccion del paciente.
    * @param telefono movil del paciente.
-   * @param aseguradora
+   * @param aseguradora del paciente.
    */
   public Paciente(String nombre, String dni, String direccion, int telefono, String aseguradora) {
     this.nombre = nombre;

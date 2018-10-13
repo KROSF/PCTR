@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
 *
-* Clase que modela el metode de <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo"Monte Carlo</a>.
+* Clase que modela el metode de <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo">Monte Carlo</a>.
 * @author Carlos Rodigo Sanabria Flores
 * @version 1.0
 */
