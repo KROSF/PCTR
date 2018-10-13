@@ -6,6 +6,15 @@
       "type": "shell",
       "command": "google-java-format --replace ${file}",
       "problemMatcher": []
+    },
+    {
+      "label": "Generate javadocs practicas",
+      "type": "shell",
+      "options": {
+          "cwd": "${workspaceRoot}/practicas"
+      },
+      "command" : "mvn javadoc:javadoc && cp -r target/site/apidocs/ ../docs",
+      "problemMatcher": []
     }
   ]
 }
