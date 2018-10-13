@@ -19,7 +19,7 @@
             "console": "integratedTerminal",
             "stopOnEntry": false,
             "mainClass": "pr1.aleatorios",
-            "args": "",
+            "args": "3",
             "projectName": "practica1"
         },
         {

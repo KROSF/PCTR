@@ -1,11 +1,21 @@
 package p2;
 
 import java.util.Stack;
-
+/**
+* Clase que contiene la función de Ackermann.
+* @author Carlos Rodigo Sanabria Flores
+* @version 1.0
+*/
 public class Ack {
 
-  public static double ack(double m, double n) {
-    Stack<Double> stack = new Stack<Double>();
+  /**
+   * Función recursiva no primitiva de Ackermann.
+   * @param m número natural.
+   * @param n número natural.
+   * @return número generado por la función de Ackermann.
+   */
+  public static int ack(int m, int n) {
+    Stack<Integer> stack = new Stack<Integer>();
     stack.add(m);
     while (!stack.isEmpty()) {
       m = stack.pop();
@@ -24,6 +34,6 @@ public class Ack {
   }
 
   public static void main(String[] args) {
-    System.out.println(ack(4.0, 1.0));
+    System.out.println(ack(2, 1));
   }
 }

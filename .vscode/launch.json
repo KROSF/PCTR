@@ -2,6 +2,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - aleatorios",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "pr1.aleatorios",
+            "args": "",
+            "projectName": "practica1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "p3.App",
+            "args": "",
+            "projectName": "practica3"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - raizporBiseccion",
             "request": "launch",
             "cwd": "${workspaceFolder}",
