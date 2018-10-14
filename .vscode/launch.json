@@ -2,6 +2,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - usaComplejos",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p2.usaComplejos",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - rectangulo",
             "request": "launch",
             "cwd": "${workspaceFolder}",
