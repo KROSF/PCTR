@@ -2,6 +2,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - usaElipse",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p2.usaElipse",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - usaComplejos",
             "request": "launch",
             "cwd": "${workspaceFolder}",
