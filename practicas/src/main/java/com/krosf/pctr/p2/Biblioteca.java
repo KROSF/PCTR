@@ -39,11 +39,7 @@ public class Biblioteca {
    * @param dni del paciente a eliminar.
    */
   public void eliminar(String dni) {
-    for (Paciente p : pacientes) {
-      if (p.getDni().equals(dni)) {
-        pacientes.remove(p);
-      }
-    }
+    pacientes.removeIf(ps -> ps.getDni().equals(dni));
   }
 
   /**

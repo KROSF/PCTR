@@ -34,6 +34,19 @@ public class Ack {
   }
 
   public static void main(String[] args) {
-    System.out.println(ack(2, 1));
+    if (args.length == 2) {
+      int m = 0;
+      int n = 0;
+      try {
+        m = Integer.parseInt(args[0]);
+        n = Integer.parseInt(args[1]);
+      } catch (NumberFormatException e) {
+        System.err.println("\nLos argumentos deben ser enteros.\n");
+        System.exit(1);
+      }
+      System.out.format("\nAck(%d, %d) = %d\n\n", m, n, ack(m, n));
+    } else {
+      System.out.println("\nNúmero de argumentos incorrecto.\n");
+    }
   }
 }

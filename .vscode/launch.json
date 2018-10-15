@@ -2,6 +2,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Estadistica",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p2.Estadistica",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ack",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p2.Ack",
+            "args": "2 2",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - usaElipse",
             "request": "launch",
             "cwd": "${workspaceFolder}",
