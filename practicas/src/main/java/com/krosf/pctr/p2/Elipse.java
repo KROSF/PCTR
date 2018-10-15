@@ -9,17 +9,17 @@ public class Elipse {
    * Constructor por defecto.
    */
   public Elipse() {
-    ejeMayor = ejeMenor = 0.0;
+    semiEjeMayor = semiEjeMenor = 0.0;
   }
 
   /**
-   * Construye una elipse a partir de los ejes de la misma.
-   * @param ejeMenor de la elipse.
-   * @param ejeMayor de la elipse.
+   * Construye una elipse con los semiejes proporcionados.
+   * @param semiEjeMayor de la elipse.
+   * @param semiEjeMenor de la elipse.
    */
-  public Elipse(double ejeMenor, double ejeMayor) {
-    this.ejeMayor = ejeMayor;
-    this.ejeMenor = ejeMenor;
+  public Elipse(double semiEjeMayor, double semiEjeMenor) {
+    this.semiEjeMayor = semiEjeMayor;
+    this.semiEjeMenor = semiEjeMenor;
   }
 
   /**
@@ -27,7 +27,7 @@ public class Elipse {
    * @return El eje mayor de la elipse.
    */
   public double getEjeMayor() {
-    return this.ejeMayor;
+    return this.semiEjeMayor * 2;
   }
 
   /**
@@ -35,7 +35,7 @@ public class Elipse {
    * @return El eje menor de la elipse.
    */
   public double getEjeMenor() {
-    return this.ejeMenor;
+    return this.semiEjeMenor * 2;
   }
 
   /**
@@ -43,7 +43,7 @@ public class Elipse {
    * @return El semieje mayor de la elipse.
    */
   public double getSemiEjeMayor() {
-    return this.ejeMayor / 2;
+    return this.semiEjeMayor;
   }
 
   /**
@@ -51,7 +51,7 @@ public class Elipse {
    * @return El semieje menor de la elipse.
    */
   public double getSemiEjeMenor() {
-    return this.ejeMenor / 2;
+    return this.semiEjeMenor;
   }
 
   /**
@@ -59,7 +59,7 @@ public class Elipse {
    * @return El area de la elipse.
    */
   public double getArea() {
-    return Math.PI * ejeMayor * ejeMenor;
+    return Math.PI * semiEjeMayor * semiEjeMenor;
   }
 
   /**
@@ -67,9 +67,9 @@ public class Elipse {
    * @return La circunferencia de la elipse.
    */
   public double getPerimetro() {
-    double sumaEjes = (ejeMayor + ejeMenor );
+    double sumaEjes = (semiEjeMayor + semiEjeMenor );
     double sumaEjes_2 = Math.pow(sumaEjes, 2);
-    double restaEjes = (ejeMayor - ejeMenor);
+    double restaEjes = (semiEjeMayor - semiEjeMenor);
     double restaEjes_2 = Math.pow(restaEjes, 2);
     double raiz = Math.sqrt(-3 * (restaEjes_2 / sumaEjes_2) + 4 + 10);
     return Math.PI * sumaEjes * (3 * (restaEjes_2/(sumaEjes_2 * (raiz))) + 1);
@@ -83,19 +83,19 @@ public class Elipse {
    *         {@code false} en otro caso.
    */
   public boolean perteneceAlaElipse(double x, double y) {
-    return (((x * x) / ejeMayor * ejeMayor) + ((y * y) / ejeMenor * ejeMenor)) <= 1.0;
+    return (((x * x) / (semiEjeMayor * semiEjeMayor)) + ((y * y) / (semiEjeMenor * semiEjeMenor))) <= 1.0;
   }
 
   @Override
   public String toString() {
     return "{" +
-      " ejeMayor='" + getEjeMayor() + "'" +
-      ", ejeMenor='" + getEjeMenor() + "'" +
+      " semiEjeMayor='" + getSemiEjeMayor() + "'" +
+      ", semiEjeMenor='" + getSemiEjeMenor() + "'" +
       ", Area='" + getArea() + "'" +
       ", Perimetro='" + getPerimetro() + "'" +
       "}";
   }
 
-  private final double ejeMayor;
-  private final double ejeMenor;
+  private final double semiEjeMayor;
+  private final double semiEjeMenor;
 }

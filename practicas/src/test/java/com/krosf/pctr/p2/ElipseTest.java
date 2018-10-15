@@ -36,14 +36,14 @@ public class ElipseTest {
 
   @Test
   public void testEjes() {
-    assertEquals(1.0, elip.getEjeMayor(), 0);
-    assertEquals(1.0, elip.getEjeMenor(), 0);
+    assertEquals(2.0, elip.getEjeMayor(), 0);
+    assertEquals(2.0, elip.getEjeMenor(), 0);
   }
 
   @Test
   public void testSemiEjes() {
-    assertEquals(0.5, elip.getSemiEjeMayor(), 0);
-    assertEquals(0.5, elip.getSemiEjeMenor(), 0);
+    assertEquals(1.0, elip.getSemiEjeMayor(), 0);
+    assertEquals(1.0, elip.getSemiEjeMenor(), 0);
   }
 
   @Test
