@@ -1,8 +1,11 @@
 package com.krosf.pctr.p2;
 
 /**
- * Elipse
- */
+*
+* Representacion del concepto matemático elipse.
+* @author Carlos Rodigo Sanabria Flores
+* @version 1.0
+*/
 public class Elipse {
 
   /**
