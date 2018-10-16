@@ -6,3 +6,11 @@
 \newenvironment{Table}
     {\par\bigskip\noindent\minipage{\columnwidth}\centering}
     {\endminipage\par\bigskip}
+\newcommand{\question}[1] % This is what you will use to create a new question
+{%\refstepcounter{questions} % Increases the questions counter, this can be referenced anywhere with \thequestions
+\par\noindent % Creates a new unindented paragraph
+\phantomsection % Needed for hyperref compatibility with the \addcontensline command
+%\addcontentsline{faq}{questions}{#1} % Adds the question to the list of questions
+{\textbf{#1}}%\todo[inline, color=green!40] % Uses the todonotes package to create a fancy box to put the question
+\vspace{1em} % White space after the question before the start of the answer
+}
