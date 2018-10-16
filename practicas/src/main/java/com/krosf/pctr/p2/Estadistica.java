@@ -2,6 +2,7 @@ package com.krosf.pctr.p2;
 
 import java.util.stream.DoubleStream;
 import java.util.Scanner;
+
 /**
 *
 * Modelo de clase con metodos estadisticos.
@@ -15,32 +16,38 @@ public class Estadistica {
    * @param datos con los cuales calcular la media.
    * @return  media arimetica para la muestra.
    */
-  public static double media(double[] datos) {
+  public static double mediaArimetica(double[] datos) {
     return DoubleStream.of(datos).average().getAsDouble();
   }
 
   /**
-   * Metodo para calcular la moda.
-   * @param datos con los cuales calcular la moda.
-   * @return moda de la muestra.
+   * Metodo para calcular la media Geometrica.
+   * @param datos con los cuales calcular la media.
+   * @return media geometrica de la muestra.
    */
-  public static double moda(double[] datos) {
-    int contadorModa = 0;
-    int contador = 0;
-    double moda = 0;
+  public static double mediaGeometrica(double[] datos) {
+    double producto = 1.0;
     for (double dato : datos) {
-      contador = 0;
-      for (double elemento :  datos) {
-        if (dato == elemento) {
-          ++contador;
-        }
+      if (dato == 0.0) {
+        return 0.0;
       }
-      if (contador > contadorModa) {
-        contadorModa = contador;
-        moda = dato;
-      }
+      producto *= dato;
     }
-    return moda;
+    return Math.pow(producto, 1.0 / datos.length);
+  }
+
+  /**
+   * Metodo para calcular la media Armonica
+   * @param datos con los cuales calcular la media.
+   * @return media armonica de la muestra.
+   * @throws ArithmeticException
+   */
+  public static double mediaArmonica(double[] datos) throws ArithmeticException {
+    double suma = 0.0;
+    for (double dato : datos) {
+      suma += (1 / dato);
+    }
+    return datos.length / suma;
   }
 
   /**
@@ -49,7 +56,7 @@ public class Estadistica {
    * @return varianza de la muestra.
    */
   public static double varianza(double[] datos) {
-    double media_2 = Math.pow(media(datos), 2);
+    double media_2 = Math.pow(mediaArimetica(datos), 2);
     double sum_2 = 0.0;
     for (double dato : datos) {
       sum_2 += Math.pow(dato, 2);
@@ -97,39 +104,43 @@ public class Estadistica {
   public static void main(String[] args) {
     if (args.length == 1) {
       int eltos = 0;
-
       try {
         eltos = Integer.parseInt(args[0]);
       } catch (NumberFormatException e) {
         System.err.println("El argumento " + args[0] + " debe ser un entero.");
         System.exit(1);
       }
-
       System.out.println("Introduce " + eltos + " elementos: ");
-
       double[] datos = leerDatos(eltos);
-      String[] opciones = {"\nEstadisticos","1. Media","2. Moda","3. Varianza","4. Desviacion Tipica","S. Salir"};
+      String[] opciones = {"\nEstadisticos","1. Media Arimetica","2. Media Geometrica","3. Media Armonica","4. Varianza","5. Desviacion Tipica","S. Salir"};
       String op = "";
-
       while (!op.equals("S") && !op.equals("s")) {
         switch (op = mostrarOpciones(opciones)) {
           case "1":
-            System.out.format("\n La media es %f\n",media(datos));
+            System.out.format("\n La Media Arimetica es %f\n", mediaArimetica(datos));
             break;
           case "2":
-            System.out.format("\n La moda es %f\n",moda(datos));
+            System.out.format("\n La Media Geometrica es %s\n", mediaGeometrica(datos));
             break;
           case "3":
-            System.out.format("\n La Varianza es %f\n",varianza(datos));
+            System.out.format("\n La Media Armonica es %s\n", mediaArmonica(datos));
             break;
           case "4":
-            System.out.format("\n La Desviacion Tipica es %f\n",desviacionTipica(datos));
+            System.out.format("\n La Varianza es %f\n", varianza(datos));
+            break;
+          case "5":
+            System.out.format("\n La Desviacion Tipica es %f\n", desviacionTipica(datos));
             break;
         }
       }
       scan.close();
     }
   }
+
+  /**
+   * Evitar instanciar objetos de esta clase.
+   */
+  private Estadistica() {}
 
   /**
    * Scanner global detro de la funcion.

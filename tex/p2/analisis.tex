@@ -1,25 +1,26 @@
 \input{../global/prelude}
-\title{Ackermann}
+\title{Fución de Ackermann}
 \begin{document}
+\maketitle
+\begin{abstract}
+    Resultados obtenidos con la función de Ackermann.
+\end{abstract}
+\section{Resultados}
 \input{../global/macros}
-    \begin{table}
-        \centering
-        \begin{tabular}{l*{5}{c}}
-            \toprule
-            & \multicolumn{5}{c}{\textbf{n}} \\
-            \cmidrule(lr){2-6}
-            \textbf{m} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4}\\
-            \midrule
-            \textbf{0} & 1  & 2     & 3  & 4  & 5   \\
-            \textbf{1} & 2  & 3     & 4  & 5  & 6   \\
-            \textbf{2} & 3  & 5     & 7  & 9  & 11  \\
-            \textbf{3} & 5  & 13    & 29 & 61 & 125 \\
-            \textbf{4} & 13 & 65533 & \textbf{$\infty$} & \textbf{$\infty$} & \textbf{$\infty$}\\
-            \bottomrule
-        \end{tabular}
-        \caption{Ackermann}
-        \label{table:1}
-    \end{table}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{m\textbackslash n} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\ \hline
+        \textbf{0} & 1 & 2 & 3 & 4 & 5 \\ \hline
+        \textbf{1} & 2 & 3 & 4 & 5 & 6 \\ \hline
+        \textbf{2} & 3 & 5 & 7 & 9 & 11 \\ \hline
+        \textbf{3} & 5 & 13 & 29 & 61 & 125 \\ \hline
+        \textbf{4} & 13 & 65533 & \textbf{$\infty$} & \textbf{$\infty$} & \textbf{$\infty$} \\ \hline
+    \end{tabular}
+    \caption{Resultados Ackermann}
+    \label{table:Ack}
+\end{table}
 \section{Preguntas}
 \question{¿Qué observa en relación con esta prueba y esta particularísima función?}\\
 Que la función crece muy rapidamente y para valores mayores a (4,1) la función genera números muy grandes.

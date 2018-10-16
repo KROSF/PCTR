@@ -46,7 +46,7 @@ public class Ack {
       }
       System.out.format("\nAck(%d, %d) = %d\n\n", m, n, ack(m, n));
     } else {
-      System.out.println("\nNúmero de argumentos incorrecto.\n");
+      System.err.println("\nNúmero de argumentos incorrecto.\n");
     }
   }
 }

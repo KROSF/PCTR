@@ -65,10 +65,16 @@ public class Biblioteca {
     return pacientes.stream().filter(p).collect(Collectors.toList());
   }
 
+  public static void main(String[] args) {
+    Biblioteca b = new Biblioteca();
+    b.menu();
+    scan.close();
+  }
+
   /**
    * Función que desplega el menu.
    */
-  public void menu() {
+  private void menu() {
     String[] dop = {"Biblioteca", "1. Insertar.", "2. Eliminar.", "3. Buscar.", "S. Salir."};
     String op = "";
     while (!op.equals("S") && !op.equals("s")) {
@@ -84,12 +90,6 @@ public class Biblioteca {
           break;
       }
     }
-  }
-
-  public static void main(String[] args) {
-    Biblioteca b = new Biblioteca();
-    b.menu();
-    scan.close();
   }
 
   /**
