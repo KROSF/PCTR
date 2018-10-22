@@ -15,6 +15,19 @@
       },
       "command" : "mvn javadoc:javadoc && cp -r target/site/apidocs/ ../docs",
       "problemMatcher": []
+    },
+    {
+      "label": "zip",
+      "type": "shell",
+      "command" :[
+        "mkdir tmp && cp -r ${fileDirname} tmp/ && gsed -i \"1s/.*/package\\ $(basename ${fileDirname});/\" tmp/$(basename ${fileDirname})/*.java",
+        "&& cd tmp && zip -r ../$(basename ${fileDirname}).zip $(basename ${fileDirname}) -x \"*.DS_Store\" && cd .. && rm -r tmp",
+        "&& mv $(basename ${fileDirname}).zip ~/Desktop/"
+      ],
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceRoot}/practicas/src/main/java/com/krosf/pctr"
+      }
     }
   ]
 }
