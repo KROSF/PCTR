@@ -2,6 +2,39 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Matriz",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.s2.Matriz",
+            "args": "",
+            "projectName": "seminarios"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Automata",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.s2.Automata",
+            "args": "",
+            "projectName": "seminarios"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - usaSemaforo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.s2.usaSemaforo",
+            "args": "",
+            "projectName": "seminarios"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Estadistica",
             "request": "launch",
             "cwd": "${workspaceFolder}",

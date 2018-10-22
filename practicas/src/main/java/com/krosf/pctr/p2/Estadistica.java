@@ -2,6 +2,10 @@ package com.krosf.pctr.p2;
 
 import java.util.stream.DoubleStream;
 import java.util.Scanner;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.function.Function;
 
 /**
 *
@@ -48,6 +52,26 @@ public class Estadistica {
       suma += (1 / dato);
     }
     return datos.length / suma;
+  }
+
+  /**
+   * Metodo para calcular la moda/s.
+   * @param datos con los cuales calcular la moda/s.
+   * @return moda/s de la muestra.
+   */
+  public static List<Double> moda(double[] datos) {
+    List<Double> listDatos =  DoubleStream.of(datos).boxed().collect(Collectors.toList());
+    final Map<Double, Long> frecuencias = listDatos.stream()
+      .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+    final long frecuenciaMaxima = frecuencias.values().stream()
+      .mapToLong(count -> count)
+      .max().orElse(-1);
+
+    return frecuencias.entrySet().stream()
+      .filter(tuple -> tuple.getValue() == frecuenciaMaxima)
+      .map(Map.Entry::getKey).sorted()
+      .collect(Collectors.toList());
   }
 
   /**
