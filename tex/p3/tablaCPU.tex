@@ -1,0 +1,26 @@
+\input{../global/prelude}
+\title{Rendimiento CPU}
+\begin{document}
+\maketitle
+\begin{abstract}
+    Tiempos obtenidos en el escalado de un vector con distintos números de nucleos.
+\end{abstract}
+\input{../global/macros}
+\begin{figure}[h]%
+    \centering%
+    \begin{gnuplot}[terminal=epslatex,terminaloptions=color dashed]
+        set key box top left
+        set key opaque
+        set key width 2
+        set sample 1000
+        set xr [0:1000000000]
+        set yr [0:1500]
+        set xlabel '\textbf{Tamaño}'
+        set ylabel '\textbf{Tiempo}'
+        plot "core.csv" using 1:2 w l lt rgb "#D22E3E" lw 4 t 'Single-Core',\
+        "core.csv" using 1:3 w l lt rgb "#1662F4" lw 4 t 'Multi-Core'
+    \end{gnuplot}
+    \caption{This is a simple example using the latex-terminal.}%
+    \label{pic:latex}%
+\end{figure}
+\end{document}

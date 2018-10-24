@@ -63,7 +63,7 @@ public class Estadistica {
     List<Double> listDatos =  DoubleStream.of(datos).boxed().collect(Collectors.toList());
     final Map<Double, Long> frecuencias = listDatos.stream()
       .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
+      
     final long frecuenciaMaxima = frecuencias.values().stream()
       .mapToLong(count -> count)
       .max().orElse(-1);
