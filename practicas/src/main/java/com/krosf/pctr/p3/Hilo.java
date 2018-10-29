@@ -27,6 +27,6 @@ public class Hilo extends Thread {
   }
 
   private static int n = 0;
-  private final int iter = (int) 1E2;
+  private final int iter = (int) 10E2;
   private boolean type;
 }

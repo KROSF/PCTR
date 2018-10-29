@@ -1,5 +1,8 @@
 package com.krosf.pctr.p3;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 /**
@@ -20,15 +23,27 @@ public class escalaVector {
     }
   }
 
+  public static void appendStrToFile(String fileName, String str) { 
+    try {
+      BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
+      out.write(str); 
+      out.close(); 
+    } catch (IOException e) { 
+      System.out.println("exception occoured" + e); 
+    } 
+  }
+
   public static void main(String[] args) {
-    double[] vector = new double[Integer.MAX_VALUE/3];
-    long start = System.currentTimeMillis();
-    rellenar(-22, 22,vector);
-    long end = System.currentTimeMillis();
-    System.out.println(end-start + "ms");
-    start = System.currentTimeMillis();
-    escalar(vector, 22.22);
-    end = System.currentTimeMillis();
-    System.out.println(end-start + "ms");
+    double[] vector;
+    long start;
+    long end;
+    for(int i = 0, j = 0; i <= 10E9; i = (int) Math.pow(10, j), ++j) {
+      vector = new double[i];
+      rellenar(-22, 22, vector);
+      start = System.nanoTime();
+      escalar(vector, 22.22);
+      end = System.nanoTime();
+      appendStrToFile("/Users/krosf/Desktop/mono.csv", String.format("%d, %d\n", i, end-start));
+    }
   }
 }

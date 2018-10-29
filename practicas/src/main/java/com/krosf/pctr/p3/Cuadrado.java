@@ -29,7 +29,7 @@ public class Cuadrado extends Poligono {
 
   @Override
   public void add(Punto p) {
-    if (size() >= 4) {
+    if (size() == 4) {
       throw new IndexOutOfBoundsException("Número de vertices incorrectos");
     }
     super.add(p);

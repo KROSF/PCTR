@@ -17,7 +17,7 @@ public class Poligono {
   }
 
   public Poligono(Punto[] puntos) {
-    size = 0;
+    this.size = 0;
     this.vertices = new ArrayList<Punto>(puntos.length);
     for(Punto p : puntos) {
       add(p);

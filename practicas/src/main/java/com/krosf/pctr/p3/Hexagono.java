@@ -21,7 +21,7 @@ public class Hexagono extends Poligono {
 
   @Override
   public void add(Punto p) {
-    if (size() >= 6) {
+    if (size() == 6) {
       throw new IndexOutOfBoundsException("Número de vertices incorrectos");
     }
     super.add(p);

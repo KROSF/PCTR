@@ -86,7 +86,7 @@ public class Triangulo extends Poligono {
 
   @Override
   public void add(Punto p) {
-    if (size() >= 3) {
+    if (size() == 3) {
       throw new IndexOutOfBoundsException("Número de vertices incorrectos");
     }
     super.add(p);

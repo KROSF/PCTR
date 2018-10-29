@@ -1,8 +1,5 @@
 package com.krosf.pctr.p3;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
 *
 * 
@@ -26,6 +23,7 @@ public class usaTodo {
       new Punto(52,9),
       new Punto(22,6)
     });
+
     Hexagono hexagono = new Hexagono(new Punto[]{
       new Punto(12,5332),
       new Punto(66,34),
@@ -34,13 +32,14 @@ public class usaTodo {
       new Punto(55,7),
       new Punto(66,9)
     });
-    List<Poligono> poligonos = new ArrayList<Poligono>();
-    poligonos.add(triangulo);
-    poligonos.add(cuadrado);
-    poligonos.add(pentagono);
-    poligonos.add(hexagono);
+
+    Poligono[] poligonos = new Poligono[]{
+      triangulo, cuadrado,
+      pentagono, hexagono};
+
     for(Poligono p : poligonos) {
       System.out.println(p);
     }
+
   }
 }

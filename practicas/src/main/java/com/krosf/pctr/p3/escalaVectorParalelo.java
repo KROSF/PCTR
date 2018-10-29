@@ -1,5 +1,8 @@
 package com.krosf.pctr.p3;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 /**
@@ -61,29 +64,47 @@ public class escalaVectorParalelo extends Thread {
     return vector.length;
   }
 
-  public static void main(String[] args) {
-    int iter = Integer.MAX_VALUE/3;
-    setEscalar(22.22);
-    double[] vector = new double[iter];
-    rellenar(-22, 22,vector);
-    setVector(vector);
-    int n_hilos = Runtime.getRuntime().availableProcessors();
-    int len = (int) Math.ceil(getSize() / n_hilos);
-    escalaVectorParalelo[] hilos = new escalaVectorParalelo[n_hilos];
-    long start = System.currentTimeMillis();
-    for (int i = 0; i < hilos.length; ++i) {
-      hilos[i] = new escalaVectorParalelo(i*len, (i+1) * len);
-      hilos[i].start();
-    }
-    for (Thread t : hilos) {
-      try {
-        t.join();
-      } catch (InterruptedException e) {
-        e.printStackTrace();
+  public static void appendStrToFile(String fileName, String str) { 
+    try {
+      BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
+      out.write(str); 
+      out.close(); 
+    } catch (IOException e) { 
+      System.out.println("exception occoured" + e); 
+    } 
+  }
+
+  public static void escalar() {
+    double[] vector;
+    long start;
+    long end;
+    for(int i = 0, j = 0; i < 10E9+1; i = (int) Math.pow(10, j), ++j) {
+      vector = new double[i];
+      rellenar(-22, 22, vector);
+      setEscalar(22.22);
+      setVector(vector);
+      int n_hilos = Runtime.getRuntime().availableProcessors();
+      int len = (int) Math.ceil(getSize() / n_hilos);
+      escalaVectorParalelo[] hilos = new escalaVectorParalelo[n_hilos];
+      start = System.nanoTime();
+      for (int k = 0; k < hilos.length; ++k) {
+        hilos[k] = new escalaVectorParalelo(k*len, (k+1) * len);
+        hilos[k].start();
       }
+      for (Thread t : hilos) {
+        try {
+          t.join();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+      }
+      end = System.nanoTime();
+      appendStrToFile("/Users/krosf/Desktop/core.csv", String.format("%d, %d\n", i, end-start));
     }
-    long end = System.currentTimeMillis();
-    System.out.println(end-start + "ms");
+  }
+
+  public static void main(String[] args) {
+    escalar();
   }
 
   private static double[] vector;
