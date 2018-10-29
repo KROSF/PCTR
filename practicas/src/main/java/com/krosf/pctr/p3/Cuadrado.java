@@ -12,6 +12,13 @@ public class Cuadrado extends Poligono {
     super(4);
   }
 
+  public Cuadrado(Punto[] puntos) {
+    super(puntos);
+    if (puntos.length > 4) {
+      throw new IndexOutOfBoundsException("Número de vertices incorrectos");
+    }
+  }
+
   public double lado() {
     return super.lado(1);
   }

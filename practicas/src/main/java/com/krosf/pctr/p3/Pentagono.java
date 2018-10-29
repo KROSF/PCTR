@@ -12,6 +12,13 @@ public class Pentagono extends Poligono {
     super(5);
   }
 
+  public Pentagono(Punto[] puntos) {
+    super(puntos);
+    if (puntos.length > 5) {
+      throw new IndexOutOfBoundsException("Número de vertices incorrectos");
+    }
+  }
+
   @Override
   public void add(Punto p) {
     if (size() >= 5) {

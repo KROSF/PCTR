@@ -36,7 +36,7 @@ public class tablaCPU {
     int n_hilos = Runtime.getRuntime().availableProcessors();
     int len = (int) Math.ceil(escalaVectorParalelo.getSize() / n_hilos);
     escalaVectorParalelo[] hilos = new escalaVectorParalelo[n_hilos];
-    start = System.currentTimeMillis();
+    start = System.nanoTime();
     for (int j = 0; j < hilos.length; ++j) {
       hilos[j] = new escalaVectorParalelo(j*len, (j+1) * len);
       hilos[j].start();
@@ -48,19 +48,19 @@ public class tablaCPU {
         e.printStackTrace();
       }
     }
-    end = System.currentTimeMillis();
+    end = System.nanoTime();
     appendStrToFile("/Users/krosf/Desktop/core.csv", String.format("%d, %d\n",size,end-start));
   }
 
   public static void main(String[] args) {
     double[] vector;
-    //int size;
-    //for (int i = 0, j = 0; i < 10E9; i += (int) Math.pow(2, j) , ++j) {
+    for (int i = 0, j = 0; i < 10E9; i += (int) Math.pow(2, j)) {
       //size = i;
-      vector = new double[1073741823];
+      vector = new double[i];
       escalaVectorParalelo.rellenar(-22, 22, vector);
       //mono(vector, i, j);
-      core(vector, 1073741823, 34);
-    //}
+      core(vector, i, 34);
+      ++j;
+    }
   }
 }

@@ -15,6 +15,13 @@ public class Triangulo extends Poligono {
     super(3);
   }
 
+  public Triangulo(Punto[] puntos) {
+    super(puntos);
+    if (puntos.length > 3) {
+      throw new IndexOutOfBoundsException("Número de vertices incorrectos");
+    }
+  }
+
   /**
    * 
    * @return
