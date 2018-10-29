@@ -1,20 +1,39 @@
 \input{../global/prelude}
 \title{Estadisticos}
 \begin{document}
+\maketitle
+\begin{abstract}
+    \centering
+    Formulas y descripción de los estadísticos usados en la práctica.
+\end{abstract}
 \input{../global/macros}
 \section{Media}
+Es una medida de tendencia central. Resulta al efectuar una serie determinada de operaciones con un conjunto de números y que, en determinadas condiciones, puede representar por sí solo a todo el conjunto.
 \subsection{Arimética}
-\subsection{Geometrica}
-\subsection{}
+Valor característico de una serie de datos cuantitativos
 \begin{equation}
     \overline{x} = \dfrac{\sum\limits_{i=1}^n{x_i}}{n}
 \end{equation}
+\subsection{Geométrica}
+De una cantidad arbitraria de números es la raíz n-ésima del producto de todos los números.
 \begin{equation}
     \overline{x} = (\prod\limits_{i=1}^n{a_i})^{\frac{1}{n}}
 \end{equation}
+\subsection{Armónica}
+Es igual al recíproco, o inverso, de la media aritmética de los recíprocos de dichos valores.
+\begin{equation}
+    H = \dfrac{n}{\sum\limits_{i=1}^n{\frac{1}{x_i}}}
+\end{equation}
+\section{Varianza}
+Es una medida de dispersión definida como la esperanza del cuadrado de la desviación de dicha variable respecto a su media.
 \begin{equation}
     \sigma^2 = \dfrac{\sum\limits_{i=1}^n{x^2_i}}{n}-\overline{x}^2
 \end{equation}
+\section{Moda}
+Es el valor con mayor frecuencia en una distribución de datos.
+Se hablará de una distribución multimodal de los datos adquiridos en una columna cuando encontremos mas de una moda, es decir, dos o mas datos que tengan la misma frecuencia absoluta máxima.
+\section{Desviación Típica}
+Es una medida de dispersión para variables de razón y de intervalo. Se define como la raíz cuadrada de la varianza de la variable.
 \begin{equation}
     \sigma = \sqrt{\sigma^2}
 \end{equation}
