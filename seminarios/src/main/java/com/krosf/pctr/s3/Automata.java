@@ -38,8 +38,8 @@ public class Automata extends Thread {
   }
 
   public static void main(String[] args) {
-    int n_hilos = Runtime.getRuntime().availableProcessors();
-    Automata[] hilos = new Automata[n_hilos];
+    //int n_hilos = Runtime.getRuntime().availableProcessors();
+    //Automata[] hilos = new Automata[n_hilos];
   }
 
   @Override

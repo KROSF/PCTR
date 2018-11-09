@@ -1,8 +1,5 @@
 package com.krosf.pctr.p3;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Random;
 
 /**
@@ -15,7 +12,7 @@ public class escalaVectorParalelo extends Thread {
     this.fin = fin;
   }
 
-  public static void rellenar(int min, int max, double[] vector) {
+  public static void rellenar(int min, int max, int[] vector) {
     int n_hilos = Runtime.getRuntime().availableProcessors();
     int len = (int) Math.ceil(vector.length / n_hilos);
     
@@ -27,7 +24,7 @@ public class escalaVectorParalelo extends Thread {
         public void run() {
           Random  r = new Random();
           for(int j = s * len; j < (s+1) * len; ++j) {
-            vector[j] = (r.nextInt(max + 1 -min) + min) + r.nextDouble();
+            vector[j] = (r.nextInt(max + 1 -min) + min);
           }
         }
       });
@@ -48,45 +45,33 @@ public class escalaVectorParalelo extends Thread {
     }
   }
 
-  public static void setEscalar(double e) {
+  public static void setEscalar(int e) {
     escalar = e;
   }
 
-  public static void setVector(double[] v) {
+  public static void setVector(int[] v) {
     vector = v;
   }
 
   public static void setSize(int size) {
-    vector = new double[size];
+    vector = new int[size];
   }
 
   public static int getSize() {
     return vector.length;
   }
 
-  public static void appendStrToFile(String fileName, String str) { 
-    try {
-      BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
-      out.write(str); 
-      out.close(); 
-    } catch (IOException e) { 
-      System.out.println("exception occoured" + e); 
-    } 
-  }
-
   public static void escalar() {
-    double[] vector;
-    long start;
-    long end;
-    for(int i = 0, j = 0; i < 10E9+1; i = (int) Math.pow(10, j), ++j) {
-      vector = new double[i];
+    int[] vector;
+    for(int i = 0, j = 0; i < Integer.MAX_VALUE; i = (int) Math.pow(2, j), ++j) {
+      vector = new int[i];
       rellenar(-22, 22, vector);
-      setEscalar(22.22);
+      setEscalar(22);
       setVector(vector);
       int n_hilos = Runtime.getRuntime().availableProcessors();
       int len = (int) Math.ceil(getSize() / n_hilos);
       escalaVectorParalelo[] hilos = new escalaVectorParalelo[n_hilos];
-      start = System.nanoTime();
+
       for (int k = 0; k < hilos.length; ++k) {
         hilos[k] = new escalaVectorParalelo(k*len, (k+1) * len);
         hilos[k].start();
@@ -98,8 +83,6 @@ public class escalaVectorParalelo extends Thread {
           e.printStackTrace();
         }
       }
-      end = System.nanoTime();
-      appendStrToFile("/Users/krosf/Desktop/core.csv", String.format("%d, %d\n", i, end-start));
     }
   }
 
@@ -107,8 +90,8 @@ public class escalaVectorParalelo extends Thread {
     escalar();
   }
 
-  private static double[] vector;
-  private static double escalar;
+  private static int[] vector;
+  private static int escalar;
   private int inicio;
   private int fin;
 }
