@@ -2,6 +2,50 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UsaprodMatConcurrente",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p4.UsaprodMatConcurrente",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - prodMat",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p4.prodMat",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - matVectorConcurrente",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p4.matVectorConcurrente",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - matVector",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p4.matVector",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Usa_Cajero",
             "request": "launch",
             "cwd": "${workspaceFolder}",
