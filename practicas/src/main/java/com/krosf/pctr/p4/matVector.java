@@ -2,6 +2,7 @@ package com.krosf.pctr.p4;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
 *
@@ -9,6 +10,7 @@ import java.util.Random;
 * @version 1.0
 */
 public class matVector {
+
   public static Double[] producto(Double[][] matriz, Double[] vector) {
     if (matriz[0].length != vector.length) {
       throw new IndexOutOfBoundsException("Dimensiones no apropiadas");
@@ -48,9 +50,80 @@ public class matVector {
   }
 
   public static void main(String[] args) {
-    int dimension = Integer.parseInt(args[0]);
-    Double[][] matriz = matrizAleatoria(dimension, dimension);
-    Double[] vector = vectorAleatorio(dimension);
-    producto(matriz, vector);
+    int[] dim = null;
+    Double[][] matriz = null;
+    Double[] vector = null;
+    String op = "";
+    while (!op.equals("S") && !op.equals("s")) {
+      switch (op = displayOpciones(opciones)) {
+        case "1":
+          dim = preguntarDimensiones();
+          matriz = matrizUsuario(dim[0], dim[1]);
+          vector = vectorUsuario(dim[1]);
+          System.out.println("*** *** Vector Resultado *** ***");
+          printVector(producto(matriz, vector));
+        break;
+        case "2":
+          dim = preguntarDimensiones();
+          matriz = matrizAleatoria(dim[0], dim[1]);
+          vector = vectorAleatorio(dim[1]);
+          System.out.println("*** *** Vector Resultado *** ***");
+          printVector(producto(matriz, vector));
+        break;
+      }
+    }
   }
+
+  private static String displayOpciones(String[] opciones) {
+    for (String opcion : opciones) {
+      System.out.println(opcion);
+    }
+    System.out.print("Seleccione una opcion: ");
+    String rsp = scan.nextLine();
+    scan.reset();
+    return rsp;
+  }
+
+  private static int[] preguntarDimensiones() {
+    int[] dimensiones = new int[2];
+    System.out.print("Ingrese filas: ");
+    dimensiones[0] = scan.nextInt();
+    System.out.print("Ingrese columnas: ");
+    dimensiones[1] = scan.nextInt();
+    System.out.printf("la dimension del vector sera %d\n", dimensiones[1]);
+    scan.nextLine();
+    return dimensiones;
+  }
+
+  private static Double[][] matrizUsuario(int filas, int columnas) {
+    Double[][] matriz = new Double[filas][columnas];
+    System.out.println("Ingrese los elementos de la matriz");
+    for (int i = 0; i < filas; ++i) {
+      for (int j = 0; j < columnas; ++j) {
+        System.out.printf("Elemento (%d, %d) = ", i, j);
+        matriz[i][j] = scan.nextDouble();
+      }
+    }
+    scan.nextLine();
+    return matriz;
+  }
+
+  private static Double[] vectorUsuario(int tam) {
+    Double[] vector = new Double[tam];
+    System.out.println("Ingrese los elementos del vector");
+    for (int i = 0; i < tam; ++i) {
+      System.out.printf("Elemento (%d) = ", i);
+      vector[i] = scan.nextDouble();
+    }
+    scan.nextLine();
+    return vector;
+  }
+
+  private static Scanner scan = new Scanner(System.in);
+  private static final String[] opciones = {
+    "      Matriz - Vector",
+    "1. Insertar Matriz - Vector",
+    "2. Matriz - Vector Aleatorios",
+    "S. Salir"
+  };
 }

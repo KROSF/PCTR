@@ -2,6 +2,7 @@ package com.krosf.pctr.p4;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
@@ -9,10 +10,11 @@ import java.util.stream.Collectors;
  */
 public class prodMatConcurrente extends Thread {
 
+  private int fila;
   private static volatile Double[][] A;
   private static volatile Double[][] B;
   private static volatile Double[][] resultado;
-  private int fila;
+  private static Scanner scan = new Scanner(System.in);
 
   public prodMatConcurrente(int fila) {
     this.fila = fila;
@@ -29,10 +31,32 @@ public class prodMatConcurrente extends Thread {
     return aleatoria;
   }
 
-  public static void initAllMatriz(int filas, int columnas) {
-    A = matrizAleatoria(filas, columnas);
-    B = matrizAleatoria(filas, columnas);
-    resultado = new Double[filas][columnas];
+  public static Double[][] matrizUsuario(int filas, int columnas) {
+    Double[][] matriz = new Double[filas][columnas];
+    System.out.println("Ingrese los elementos de la matriz");
+    for (int i = 0; i < filas; ++i) {
+      for (int j = 0; j < columnas; ++j) {
+        System.out.printf("Elemento (%d, %d) = ", i, j);
+        matriz[i][j] = scan.nextDouble();
+      }
+    }
+    scan.nextLine();
+    return matriz;
+  }
+
+  public static void initMatrizAleatoria(int[] dim) {
+    A = matrizAleatoria(dim[0], dim[1]);
+    B = matrizAleatoria(dim[1], dim[2]);
+    resultado = new Double[dim[0]][dim[2]];
+    for (Double[] c : resultado) {
+      Arrays.fill(c, 0.0);
+    }
+  }
+
+  public static void initMatrizUsuario(int[] dim) {
+    A = matrizUsuario(dim[0], dim[1]);
+    B = matrizUsuario(dim[1], dim[2]);
+    resultado = new Double[dim[0]][dim[2]];
     for (Double[] c : resultado) {
       Arrays.fill(c, 0.0);
     }
