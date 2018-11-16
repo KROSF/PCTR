@@ -5,12 +5,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
-*
-* @author Carlos Rodigo Sanabria Flores
-* @version 1.0
-*/
+ * Clase para multiplar una Matriz por un Vector.
+ *
+ * @author Carlos Rodigo Sanabria Flores
+ * @version 1.0
+ */
 public class matVector {
 
+  /**
+   * Metodo para realizar el producto matriz vector.
+   * @param matriz de dimension m x n
+   * @param vector de dimension n
+   * @return vector de dimension m
+   */
   public static Double[] producto(Double[][] matriz, Double[] vector) {
     if (matriz[0].length != vector.length) {
       throw new IndexOutOfBoundsException("Dimensiones no apropiadas");
@@ -25,6 +32,12 @@ public class matVector {
     return resultado;
   }
 
+  /**
+   * Metodo para crear una matriz con números aleatorios.
+   * @param filas de la matriz.
+   * @param columnas de la matriz.
+   * @return matriz[filas][columnas] de elementos aleatorios.
+   */
   public static Double[][] matrizAleatoria(int filas, int columnas) {
     Double[][] aleatoria = new Double[filas][columnas];
     Random r = new Random();
@@ -36,6 +49,11 @@ public class matVector {
     return aleatoria;
   }
 
+  /**
+   * Metodo para crear un vector de números aleatorios.
+   * @param tam tamaño del vector.
+   * @return vector[tam].
+   */
   public static Double[] vectorAleatorio(int tam) {
     Double[] aleatorio = new Double[tam];
     Random r = new Random();
@@ -45,6 +63,10 @@ public class matVector {
     return aleatorio;
   }
 
+  /**
+   * Metodo para visualizar un vector por la salida estandar.
+   * @param vector a visualizar.
+   */
   public static void printVector(Double[] vector) {
     System.out.println(Arrays.toString(vector));
   }
@@ -62,18 +84,23 @@ public class matVector {
           vector = vectorUsuario(dim[1]);
           System.out.println("*** *** Vector Resultado *** ***");
           printVector(producto(matriz, vector));
-        break;
+          break;
         case "2":
           dim = preguntarDimensiones();
           matriz = matrizAleatoria(dim[0], dim[1]);
           vector = vectorAleatorio(dim[1]);
           System.out.println("*** *** Vector Resultado *** ***");
           printVector(producto(matriz, vector));
-        break;
+          break;
       }
     }
   }
 
+  /**
+   * Metodo que genera un menu de usuario en la salida estandar.
+   * @param opciones con las que se genera el menu.
+   * @return opcion selecionada por el usuario.
+   */
   private static String displayOpciones(String[] opciones) {
     for (String opcion : opciones) {
       System.out.println(opcion);
@@ -84,6 +111,10 @@ public class matVector {
     return rsp;
   }
 
+  /**
+   * Metodo para obtener las dimensiones de la matriz.
+   * @return array con las dimensiones de la matriz.
+   */
   private static int[] preguntarDimensiones() {
     int[] dimensiones = new int[2];
     System.out.print("Ingrese filas: ");
@@ -95,6 +126,12 @@ public class matVector {
     return dimensiones;
   }
 
+  /**
+   * Metodo para crear un matriz de dimensiones n x m.
+   * @param filas con las que contara la matriz.
+   * @param columnas con las que contara la matriz
+   * @return matriz[filas][columnas].
+   */
   private static Double[][] matrizUsuario(int filas, int columnas) {
     Double[][] matriz = new Double[filas][columnas];
     System.out.println("Ingrese los elementos de la matriz");
@@ -108,6 +145,11 @@ public class matVector {
     return matriz;
   }
 
+  /**
+   * Metodo para crear un vector de dimension m.
+   * @param tam tamaño del vector a crear.
+   * @return vector[tam].
+   */
   private static Double[] vectorUsuario(int tam) {
     Double[] vector = new Double[tam];
     System.out.println("Ingrese los elementos del vector");

@@ -6,10 +6,19 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
- * prodMat
- */
+* Clase para realizar el producto matricial secuencialmente.
+* 
+* @author Carlos Rodigo Sanabria Flores
+* @version 1.0
+*/
 public class prodMat {
 
+  /**
+   * Metodo para crear una matriz con números aleatorios.
+   * @param filas de la matriz.
+   * @param columnas de la matriz.
+   * @return matriz[filas][columnas] de elementos aleatorios.
+   */
   public static Double[][] matrizAleatoria(int filas, int columnas) {
     Double[][] aleatoria = new Double[filas][columnas];
     Random r = new Random();
@@ -21,6 +30,12 @@ public class prodMat {
     return aleatoria;
   }
 
+  /**
+   * Metodo para crear una matriz de dimension m x n con datos instroducidos por la entrada estandar.
+   * @param filas con las que contara las matriz.
+   * @param columnas con las que contara la matriz.
+   * @return Una matriz {@link Double}[filas][columnas].
+   */
   public static Double[][] matrizUsuario(int filas, int columnas) {
     Double[][] matriz = new Double[filas][columnas];
     System.out.println("Ingrese los elementos de la matriz");
@@ -34,6 +49,12 @@ public class prodMat {
     return matriz;
   }
 
+  /**
+   * Metodo para realizar el producto matricial.
+   * @param A matriz de dimension m x n
+   * @param B matriz de dimension n x r
+   * @return matriz de dimension m x r
+   */
   public static Double[][] producto(Double[][] A, Double[][] B) {
     if (A[0].length != B.length) {
       throw new IndexOutOfBoundsException("Dimensiones incorrectas");
@@ -52,6 +73,10 @@ public class prodMat {
     return C;
   }
 
+  /**
+   * Metodo para visualizar los datos de una matriz por la salida estandar.
+   * @param matriz a visualizar.
+   */
   public static void printMatriz(Double[][] matriz) {
     System.out.println(Arrays.stream(matriz).map(Arrays::toString)
     .collect(Collectors.joining(System.lineSeparator())));
@@ -81,6 +106,10 @@ public class prodMat {
     }
   }
 
+  /**
+   * Metodo para obtener las dimensiones de las matrices.
+   * @return array con las dimensiones de las matrices.
+   */
   private static int[] preguntarDimensiones() {
     int[] dimensiones = new int[3];
     System.out.print("Ingrese filas A: ");
@@ -93,6 +122,11 @@ public class prodMat {
     return dimensiones;
   }
 
+  /**
+   * Metodo que genera un menu de usuario en la salida estandar.
+   * @param opciones con las que se genera el menu.
+   * @return opcion selecionada por el usuario.
+   */
   private static String displayOpciones(String[] opciones) {
     for (String opcion : opciones) {
       System.out.println(opcion);

@@ -5,30 +5,41 @@
 \maketitle
 \begin{abstract}
     \centering
-    Picos de uso de cpu respecto al tiempo de ejecucion en el escalado de un vector paralelamente de $10^8$ elementos.
+    Analisis de los tiempos de ejecución y uso de cpu de la multipliacion de matrices en sus
+    versiones secuencial y concurrente.
 \end{abstract}
-\begin{figure}[!htb]
+\section{\% uso máximo de CPU vs tamaño de la matriz}
+\begin{figure}[h]
     \centering
     \includegraphics[scale=.5]{vectordimensioncpu.eps}
     \caption{Matriz - Vector}
     \label{fig:digraph}
 \end{figure}
-\begin{figure}[!htb]
+\newpage
+\section{\% tiempo de ejecución vs tamaño de la matriz}
+\begin{figure}[h]
     \centering
     \includegraphics[scale=.5]{vectordimensiontiempo.eps}
     \caption{Matriz - Vector}
     \label{fig:digraph}
 \end{figure}
-\begin{figure}[!htb]
+\newpage
+\section{\% uso máximo de CPU vs tamaño de las matrices}
+\begin{figure}[h]
     \centering
     \includegraphics[scale=.5]{matrizdimensiocpu.eps}
     \caption{Matriz - Matriz}
     \label{fig:digraph}
 \end{figure}
-\begin{figure}[!htb]
+\newpage
+\section{Tiempo de procesamiento vs tamaño de las matrices}
+\begin{figure}[h]
     \centering
     \includegraphics[scale=.5]{matrizdimensiotiempo.eps}
     \caption{Matriz - Matriz}
     \label{fig:digraph}
 \end{figure}
+\section{Conclusiones}
+Observado la gráficas podemos ver que la versión concurrente es mucho mas rápida que la secuencial
+pero que a su vez realiza un consumo de recursos mucho mas alto.
 \end{document}
