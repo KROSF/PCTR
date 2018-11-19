@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- *
+ * Eisenbarg McGuire
  * 
  * @author Carlos Rodigo Sanabria Flores
  * @version 1.0
@@ -60,6 +60,4 @@ public class algEisenbergMcGuire implements Runnable {
   private static int turn = 1;
   private static int n = 2;
   private static volatile int inCS = 0;
-  //private static int iter = 0;
-  //private int index = 0;
 }

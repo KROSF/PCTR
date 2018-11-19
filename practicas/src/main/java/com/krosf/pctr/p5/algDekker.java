@@ -1,7 +1,7 @@
 package com.krosf.pctr.p5;
 
 /**
- * algDekker
+ * Dekker
  */
 public class algDekker {
   /* Number of processes currently in critical section */
