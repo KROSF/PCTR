@@ -2,6 +2,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - algEisenbergMcGuire",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p5.algEisenbergMcGuire",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - algDekker",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p5.algDekker",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UsaprodMatConcurrente",
             "request": "launch",
             "cwd": "${workspaceFolder}",
