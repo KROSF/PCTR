@@ -27,16 +27,21 @@ public class algoLamport implements Runnable {
   }
 
   public static void main(String[] args) {
-    ExecutorService exec = Executors.newFixedThreadPool(4);
-    for (int i = 0; i < 4; ++i) {
-      exec.execute(new algoLamport());
-    }
-    exec.shutdown();
+    // ExecutorService exec = Executors.newFixedThreadPool(4);
+    // for (int i = 0; i < 4; ++i) {
+    //   exec.execute(new algoLamport());
+    // }
+    // exec.shutdown();
+    new Thread(new algoLamport()).start();
+    new Thread(new algoLamport()).start();
+    new Thread(new algoLamport()).start();
+    new Thread(new algoLamport()).start();
   }
 
   private void lock(int index) {
     flags.set(index, true);
-    cola.set(index, 1 + Collections.max(cola));
+    int max = Collections.max(cola);
+    cola.set(index, 1 + max);
     flags.set(index, false);
     for (int i = 0; i < flags.size(); ++i) {
       if (i != index) {
