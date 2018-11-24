@@ -32,7 +32,7 @@ public class algEisenbergMcGuire implements Runnable {
       } 
 
     } while((index >= n) && ((turn == i) || (flags[turn] == states.IDLE)));
-    turn = i;
+    turn  = i;
     index = (turn+1) % n;
     inCS++;
     System.out.println(Thread.currentThread().getName() + " " + inCS);

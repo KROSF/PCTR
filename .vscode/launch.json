@@ -2,6 +2,50 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - resImagen",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p6.resImagen",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CargaImagen",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p6.CargaImagen",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - primosParalelos",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.extras.primosParalelos",
+            "args": "10000000",
+            "projectName": "seminarios"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ThreadTasks",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p6.ThreadTasks",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - algoLamport",
             "request": "launch",
             "cwd": "${workspaceFolder}",
