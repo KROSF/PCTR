@@ -2,6 +2,50 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - intDefinidaMonteCarlo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p1.intDefinidaMonteCarlo",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - clienteMultiple",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p7.clienteMultiple",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - matVectorConcurrente",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p6.matVectorConcurrente",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - drakkarVikingo",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p8.drakkarVikingo",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - resImagen",
             "request": "launch",
             "cwd": "${workspaceFolder}",
