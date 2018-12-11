@@ -2,6 +2,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - usaConductores",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.krosf.pctr.p8.usaConductores",
+            "args": "",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - intDefinidaMonteCarlo",
             "request": "launch",
             "cwd": "${workspaceFolder}",

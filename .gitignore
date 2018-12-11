@@ -319,5 +319,5 @@ TSWLatexianTemp*
 # glossaries
 *.glstex
 
-
+node_modules
 # End of https://www.gitignore.io/api/latex
