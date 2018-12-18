@@ -1,6 +1,7 @@
 package com.krosf.pctr.p9;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.stream.IntStream;
 
 /**
@@ -25,20 +26,15 @@ public class monitorImpresion {
         e.printStackTrace();
       }
     }
-    System.out.println(Thread.currentThread().getName() + " imprimiendo en : " + id);
-    try {
-      Thread.sleep(5000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
     impresoras[id] = false;
+    System.out.println(Thread.currentThread().getName() + " imprimiendo en : " + id);
     notifyAll();
     return id;
   }
 
   public synchronized void finImpresion(int id) {
-    System.out.println(Thread.currentThread().getName() + " liberando impresora: " + id);
     impresoras[id] = true;
+    System.out.println(Thread.currentThread().getName() + " liberando impresora: " + id);
     notifyAll();
   }
 

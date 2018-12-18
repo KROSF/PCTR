@@ -1,5 +1,6 @@
 package com.krosf.pctr.p9;
 
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -16,7 +17,13 @@ public class UsamonitorImpresion implements Runnable {
 
   @Override
   public void run() {
-    impresion.finImpresion(impresion.inicioImpresion());
+    int id = impresion.inicioImpresion();
+    try {
+      Thread.sleep(r.nextInt(10000));
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    impresion.finImpresion(id);
   }
 
   public static void main(String[] args) {
@@ -28,5 +35,6 @@ public class UsamonitorImpresion implements Runnable {
     exec.shutdown();
   }
 
-  private static monitorImpresion impresion = new monitorImpresion(4);
+  private Random r = new Random();
+  private static monitorImpresion impresion = new monitorImpresion(3);
 }

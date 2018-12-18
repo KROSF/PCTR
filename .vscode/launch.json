@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UsamonitorImpresion",
+            "request": "launch",
+            "mainClass": "com.krosf.pctr.p9.UsamonitorImpresion",
+            "projectName": "practicas"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - usaConductores",
             "request": "launch",
             "cwd": "${workspaceFolder}",
