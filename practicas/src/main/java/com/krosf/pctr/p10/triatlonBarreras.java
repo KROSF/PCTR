@@ -3,9 +3,6 @@ package com.krosf.pctr.p10;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
-
-import com.krosf.pctr.p5.algEisenbergMcGuire.states;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;

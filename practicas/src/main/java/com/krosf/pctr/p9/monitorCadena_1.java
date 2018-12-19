@@ -5,5 +5,4 @@ package com.krosf.pctr.p9;
  */
 public class monitorCadena_1 {
 
-  private int[][][] jajA;
 }

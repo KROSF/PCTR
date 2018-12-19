@@ -48,6 +48,7 @@ public class ServidorHiloconPool implements Runnable {
         System.out.println("Esperando solicitud de conexion...");
         service.execute(new ServidorHiloconPool(server.accept()));
         System.out.println("Recibida solicitud de conexion...");
+        server.close();
       }
     } catch (IOException e) {
       System.err.println("Error sockets...");

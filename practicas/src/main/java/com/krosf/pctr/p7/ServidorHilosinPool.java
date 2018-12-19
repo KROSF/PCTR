@@ -43,6 +43,7 @@ public class ServidorHilosinPool implements Runnable {
         System.out.println("Esperando solicitud de conexion...");
         new Thread(new ServidorHilosinPool(server.accept())).start();
         System.out.println("Recibida solicitud de conexion...");
+        server.close();
       }
     } catch (IOException e) {
       System.err.println("Error sockets...");
