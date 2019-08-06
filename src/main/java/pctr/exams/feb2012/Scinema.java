@@ -1,4 +1,4 @@
-package feb2012;
+package pctr.exams.feb2012;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * scinema
+ * Scinema.
  */
-public class scinema extends UnicastRemoteObject implements icinema {
+public class Scinema extends UnicastRemoteObject implements Icinema {
   private static final long serialVersionUID = 1L;
 
   private static Map<String, boolean[]> movies = new HashMap<String, boolean[]>() {
@@ -22,7 +22,7 @@ public class scinema extends UnicastRemoteObject implements icinema {
     }
   };
 
-  protected scinema() throws RemoteException {
+  protected Scinema() throws RemoteException {
     super();
   }
 
@@ -40,9 +40,14 @@ public class scinema extends UnicastRemoteObject implements icinema {
     return response;
   }
 
+  /**
+   * Start Sever for cinema.
+   *
+   * @param args not require
+   */
   public static void main(String[] args) {
     try {
-      Naming.rebind("//localhost/cinema", new scinema());
+      Naming.rebind("//localhost/cinema", new Scinema());
       System.out.println("Server Ready");
     } catch (Exception e) {
       System.err.println("Server exception: " + e.toString());
