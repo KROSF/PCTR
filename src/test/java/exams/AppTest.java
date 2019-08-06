@@ -1,4 +1,4 @@
-package com.krosf.pctr.practicas;
+package pctr;
 
 import org.junit.Test;
 
