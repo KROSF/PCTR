@@ -27,7 +27,7 @@ public class Scinema extends UnicastRemoteObject implements Icinema {
   }
 
   @Override
-  public String buyTicket(String movie, int seat) throws RemoteException {
+  public synchronized String buyTicket(String movie, int seat) throws RemoteException {
     System.out.format("%s %d\n", movie, seat);
     String response = "404";
     if (movies.containsKey(movie)) {

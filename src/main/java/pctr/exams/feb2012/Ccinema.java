@@ -27,7 +27,7 @@ public class Ccinema {
     String movie = args[0];
     String seat = args[1];
     String response = "412";
-    while (response.equals("412")) {
+    while (!response.equals("200")) {
       System.out.println("in");
       response = look_up.buyTicket(movie, Integer.parseInt(seat));
       switch (response) {
@@ -36,12 +36,12 @@ public class Ccinema {
           break;
         case "404":
           System.out.println("The movie was not found");
+          System.out.println("Choose another");
+          movie = sc.nextLine();
           break;
         case "412":
           System.out.println("The seat you choose is no available choose another");
           seat = sc.nextLine();
-          break;
-        default:
           break;
       }
     }
