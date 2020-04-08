@@ -9,11 +9,21 @@ public class OneDimension implements  Runnable {
     private  static Integer[] cells, nextGenerationCells;
     private static  Integer generations;
     private  static CyclicBarrier barrier;
+
+    /**
+     * @param begin of cells to this worker
+     * @param end of cell to this worker
+     */
     public OneDimension(Integer begin, Integer end) {
         this.begin = begin;
         this.end = end;
     }
 
+    /**
+     * @param size of cells.
+     * @param generations of cells to calculate.
+     * @param workers to use on calculation.
+     */
     private  static void init(Integer size, Integer generations, Integer workers) {
         OneDimension.cells = new Random().ints(size,0,2).boxed().toArray(Integer[]::new);
         OneDimension.nextGenerationCells = new Integer[size];
@@ -24,6 +34,10 @@ public class OneDimension implements  Runnable {
         });
     }
 
+    /**
+     * @param cell position on cells array.
+     * @return next generation value.
+     */
     private  Integer transition(Integer cell) {
         return (cells[Math.floorMod(cell - 1, cells.length)] + cells[cell]
                 + cells[Math.floorMod(cell + 1, cells.length)]) % 3;
