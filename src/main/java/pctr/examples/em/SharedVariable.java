@@ -1,4 +1,4 @@
-package examples.em;
+package pctr.examples.em;
 
 public class SharedVariable implements Runnable {
     private final int name;
@@ -11,8 +11,10 @@ public class SharedVariable implements Runnable {
     @Override
     public void run() {
         while (true) {
-            while (turn != name){};
-            System.out.println("Hilo "+ turn);
+            while (turn != name) {
+            }
+            ;
+            System.out.println("Hilo " + turn);
             if (turn == 1) {
                 turn = 2;
             } else if (turn == 2) {
@@ -25,10 +27,11 @@ public class SharedVariable implements Runnable {
         Thread[] threads = new Thread[2];
 
         for (int i = 0; i < threads.length; i++) {
-            threads[i] = new Thread(new SharedVariable(i+1));
+            threads[i] = new Thread(new SharedVariable(i + 1));
             threads[i].start();
         }
 
-        for (Thread thread : threads) thread.join();
+        for (Thread thread : threads)
+            thread.join();
     }
 }

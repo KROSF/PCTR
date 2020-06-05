@@ -1,4 +1,4 @@
-package examples.em;
+package pctr.examples.em;
 
 public class Semaphore {
     private boolean signal = false;

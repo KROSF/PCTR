@@ -1,4 +1,4 @@
-package automata;
+package pctr.automata;
 
 import java.util.Arrays;
 import java.util.Random;
