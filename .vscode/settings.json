@@ -5,5 +5,15 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "files.associations": {
+    "Pipfile": "ini",
+    "Pipfile.lock": "json",
+    "zimrc": "shellscript",
+    "zshrc": "shellscript",
+    "mutex": "cpp",
+    "condition_variable": "cpp",
+    "vector": "cpp",
+    "__mutex_base": "cpp"
+  }
 }
