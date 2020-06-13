@@ -41,7 +41,7 @@ public class Main {
   static void processInParallel(int workers, int generations) throws InterruptedException {
     Worker.initializeSharedVariables(matrix, nextMatrix, generations, workers);
     var pool = new ThreadPoolExecutor(workers, workers, 1, TimeUnit.DAYS, new LinkedBlockingQueue<>(workers));
-    int chunk = (matrix.length + workers + 1) / workers;
+    int chunk = (matrix.length + workers - 1) / workers;
     for (int worker = 0, begin, end; worker < workers; ++worker) {
       begin = worker * chunk;
       end = Math.min(begin + chunk, matrix.length);
